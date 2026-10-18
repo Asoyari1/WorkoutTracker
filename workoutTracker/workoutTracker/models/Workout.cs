@@ -20,6 +20,7 @@ namespace workoutTracker.models
 
         public void AddExercise(Exercise exercise)
         {
+            ArgumentNullException.ThrowIfNull(exercise);
             if (!Exercises.Contains(exercise))
             {
                 Exercises.Add(exercise);
