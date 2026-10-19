@@ -16,7 +16,7 @@ namespace WorkoutTracker.Tests
         }
 
         [Fact]
-        public void AddExercise_AddsExerciseToWorkout()
+            public void AddExercise_AddsExerciseToWorkout()
         {
             // Arrange
             var workout = new Workout("Push Day");
@@ -26,7 +26,7 @@ namespace WorkoutTracker.Tests
             workout.AddExercise(exercise);
 
             // Assert
-            Assert.Equal(1, workout.Exercises.Count);
+            Assert.Single(workout.Exercises);
             Assert.Contains(exercise, workout.Exercises);
         }
 
@@ -42,7 +42,7 @@ namespace WorkoutTracker.Tests
             workout.AddExercise(exercise);
 
             // Assert
-            Assert.Equal(1, workout.Exercises.Count);
+            Assert.Single(workout.Exercises);
         }
         [Fact]
         public void AddExercise_ThrowsException_WhenExerciseIsNull()
